@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息管理</title>
+</head>
+<body>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+{#    <a href="../sims/add">添加学生</a>#}
+    <tr>
+        <th>序号</th>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>身份</th>
+        <th>电话</th>
+    </tr>
+    {% for user in users %}
+        <tr>
+            <td align="center">{{ forloop.counter }} </td>
+            <td align="center">{{ user.userid }} </td>
+            <td align="center">{{ user.user }} </td>
+            <td align="center">{{ user.userage }} </td>
+            <td align="center">{{ user.useridentity }} </td>
+            <td align="center">{{ user.phonenumber }} </td>
+{#            <td align="center">#}
+{#                <a href="../sims/edit/?id={{ user.id }}">#}
+{#                    编辑#}
+{#                </a>#}
+{#                <a href="../sims/delete/?id={{ user.id }}">#}
+{#                    删除#}
+{#                </a>#}
+{#            </td>#}
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
