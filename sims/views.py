@@ -18,10 +18,12 @@ from django.shortcuts import HttpResponseRedirect,Http404,HttpResponse
 #         print(users)
 #     return render(request, 'user/index.html', {'users': users})
 
+#信息列表处理函数 django版本写法
 def index(request):
     users = User.objects.all()
     print(type(users))
     return render(request,"user/index.html", locals())
+
 
 # 学生信息新增处理函数
 def add(request):
