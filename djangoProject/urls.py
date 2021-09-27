@@ -19,5 +19,8 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^sims/', include('sims.urls'))
+    url(r'^sims/', include('sims.urls')),
+    url(r'^flight/', include('flight.urls')),
+    # url(r'^airport/', include('airport.urls')),
+    # url(r'^aircompany/', include('aircompany.urls')),
 ]
