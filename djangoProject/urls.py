@@ -16,11 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from sims.views import *;
+admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$',homepage),
     url(r'^sims/', include('sims.urls')),
     url(r'^flight/', include('flight.urls')),
+    url(r'^authorize/', include('authorize.urls')),
+
     # url(r'^airport/', include('airport.urls')),
     # url(r'^aircompany/', include('aircompany.urls')),
 ]

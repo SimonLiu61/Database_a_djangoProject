@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>欢迎登录～</title>
+    <style type="text/css">
+    .form[data-1v]{
+        width: 300px;
+        height: 230px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -200px;
+        margin-left: -150px;
+    }
+    .form h1[data-1v] {
+    text-align: center;
+}
+    h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: inherit;
+}
+.form .el-input[data-1v] {
+    margin-bottom: 10px;
+}
+.el-input {
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+}
+.el-input__inner {
+    -webkit-appearance: none;
+    background-color: #FFF;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #DCDFE6;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: inherit;
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    padding: 0 15px;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+}
+.form .el-input[data-1v], .form .el-checkbox[data-1v] {
+    margin-bottom: 10px;
+}
+.el-input--suffix .el-input__inner {
+    padding-right: 30px;
+}
+.el-input__suffix {
+    right: 5px;
+    transition: all .3s;
+    pointer-events: none;
+}
+.el-input__suffix-inner {
+    pointer-events: all;
+}
+.form .el-button[data-1v] {
+    width: 100%;
+}
+
+.el-button--primary {
+    color: #FFF;
+    background-color: #409EFF;
+    border-color: #409EFF;
+}
+
+.el-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #FFF;
+    border: 1px solid #DCDFE6;
+    color: #606266;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    transition: .1s;
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+.form .el-link.forget_password[data-1v] {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.el-link.el-link--primary {
+    color: #409EFF;
+}
+
+.el-link {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    text-decoration: none;
+    outline: 0;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+    </style>
+</head>
+<body style>
+    <!--
+    <div class="login">
+        <form name="input" action="html_form_action.php" method="get">
+            用户名：<input type="text" name="user">
+            <br>
+            密码：<input type="password" name="pwd">
+            <br>
+            <select>
+                <option value=" ">请选择工种</option>
+                <option value=" ">客户</option>
+                <option value=" ">航空公司员工</option>
+                <option value=" ">机场员工</option>
+            </select>
+            <br>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+-->
+    <div data-1v class="form">
+        <h1 data-1v><a data-1v>登陆</a></h1>
+{#        <div data-1v class="el-input">#}
+{#            <input name="username" type="text" autocomplete="off" placeholder="用户名" class="el-input__inner">#}
+{#        </div>#}
+{#        <div data-1v class="el-input el-input--suffix">#}
+{#            <input name="password" type="password" autocomplete="off" placeholder="密码" class="el-input__inner">#}
+{#            <span class="el-input__suffix">#}
+{#                <span class="el-input__suffix-inner"></span>#}
+{#            </span>#}
+{#        </div>#}
+{#        <button data-1v="button" class="el-button el-button--primary" type="submit">#}
+{#            <span>登录</span>#}
+{#        </button>#}
+        <form action="/authorize/login_site" method="get">
+            <p><input type="text" name="username" placeholder="用户名" class="el-input__inner"></p>
+            <p><input type="password" name="password" placeholder="密码" class="el-input__inner"></p>
+            <input class="el-button" type="submit" value="登录">
+        </form>
+
+    </div>
+
+</body>

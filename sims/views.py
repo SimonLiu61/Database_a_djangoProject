@@ -25,6 +25,9 @@ def index(request):
     return render(request,"user/index.html", locals())
 
 
+def homepage(request):
+    return render(request, "index.html", locals())
+
 # 学生信息新增处理函数
 def add(request):
     if request.method == 'GET':
