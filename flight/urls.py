@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
+    url(r'^add/$',views.testadd),
     # url(r'^aircompany/$', views),
     # url(r'^airport/$', views),
     # url(r'^flight/$', views),
