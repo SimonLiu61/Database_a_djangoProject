@@ -27,11 +27,20 @@
         <ul class="nav navbar-nav">
             <li><a href="#">说明</a></li>
             <li><a href="#">联系我们</a></li>
-            <li><a href="#">{{username}}</a></li>
+            <li><a href="#">     </a></li>
+            {% ifequal islogin True %}
+                <li><a href="#">已登录，用户名：{{username}}</a></li>
+                {% else %}
+                <li><a href="#">未登录，请登录-----------------></a></li>
+            {% endifequal %}
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/authorize">用户登录</a></li>
-            <li><a href="/authorize">退出登录</a></li>
+            {% ifequal islogin True %}
+                <li><a href="/authorize">退出登录</a></li>
+                {% else %}
+                <li><a href="/authorize">用户登录</a></li>
+            {% endifequal %}
         </ul>
     </div>
 </div>
