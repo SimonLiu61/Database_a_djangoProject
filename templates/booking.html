@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>航班预定</title>
+    <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>航班号：{{ flightid }}</h2>
+</div>
+<form method="post" action="../bookflight/">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th>预定者姓名</th>
+            <td><input name="booking_name"></td>
+        </tr>
+        <tr>
+            <th>预定张数</th>
+            <td><input name="booking_num"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+        {% ifequal isVip True %}
+            <li>VIP discount:10%</li>
+        {% endifequal %}
+    </table>
+</form>
+</body>
+</html>
