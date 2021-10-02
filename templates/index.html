@@ -12,8 +12,8 @@
     <title>航班信息系统</title>
 </head>
 <body>
-<div class="header">
-    <h1><a href="#">航班信息系统</a></h1>
+<div>
+    <h1 style="margin: 15px"><a href="#" >航班信息系统</a></h1>
 </div>
 
 
@@ -29,7 +29,12 @@
             <li><a href="#">联系我们</a></li>
             <li><a href="#">     </a></li>
             {% ifequal islogin True %}
-                <li><a href="#">已登录，用户名：{{username}}</a></li>
+                <li><a>已登录，用户名：{{username}}</a></li>
+                {% ifequal isVip True %}
+                        <li><a>--V.I.P user</a></li>
+                    {% else %}
+                        <li><a>--普通用户</a></li>
+                {% endifequal %}
                 {% else %}
                 <li><a href="#">未登录，请登录-----------------></a></li>
             {% endifequal %}
