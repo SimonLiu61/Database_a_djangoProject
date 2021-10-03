@@ -16,9 +16,13 @@
 <div>
     <h2>航班号：{{ flightid }}</h2>
 </div>
-<form method="post" action="../bookflight/">
+<form method="post" action="../bookticket/">
     {% csrf_token %}
     <table>
+    <tr>
+            <th>航班编号：</th>
+            <td><input type="hidden" name="flightid" value="{{ flightid }}"></td>
+        </tr>
         <tr>
             <th>预定者姓名</th>
             <td><input name="booking_name"></td>

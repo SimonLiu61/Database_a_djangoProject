@@ -61,7 +61,7 @@ class Plane(models.Model):
 
 class Ticket(models.Model):
     ticketid = models.AutoField(db_column='TicketID', primary_key=True)  # Field name made lowercase.
-    userid = models.IntegerField(db_column='UserID', blank=True, null=True)  # Field name made lowercase.
+    userid = models.CharField(db_column='UserID', max_length=255, blank=True, null=True)  # Field name made lowercase.
     flightid = models.CharField(db_column='FlightID', max_length=11, blank=True, null=True)  # Field name made lowercase.
     airportid = models.IntegerField(db_column='AirportID', blank=True, null=True)  # Field name made lowercase.
     money = models.CharField(db_column='Money', max_length=255, blank=True, null=True)  # Field name made lowercase.
@@ -77,6 +77,7 @@ class User(models.Model):
     userage = models.CharField(db_column='UserAge', max_length=255, blank=True, null=True)  # Field name made lowercase.
     useridentity = models.CharField(db_column='UserIdentity', max_length=255, blank=True, null=True)  # Field name made lowercase.
     phonenumber = models.CharField(db_column='PhoneNumber', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    isvip = models.PositiveIntegerField(db_column='isVip')  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -87,6 +88,7 @@ class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
 
     class Meta:
+        managed = False
         db_table = 'auth_group'
 
 
@@ -96,6 +98,7 @@ class AuthGroupPermissions(models.Model):
     permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
 
     class Meta:
+        managed = False
         db_table = 'auth_group_permissions'
         unique_together = (('group', 'permission'),)
 
@@ -106,6 +109,7 @@ class AuthPermission(models.Model):
     codename = models.CharField(max_length=100)
 
     class Meta:
+        managed = False
         db_table = 'auth_permission'
         unique_together = (('content_type', 'codename'),)
 
@@ -123,6 +127,7 @@ class AuthUser(models.Model):
     date_joined = models.DateTimeField()
 
     class Meta:
+        managed = False
         db_table = 'auth_user'
 
 
@@ -132,6 +137,7 @@ class AuthUserGroups(models.Model):
     group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
 
     class Meta:
+        managed = False
         db_table = 'auth_user_groups'
         unique_together = (('user', 'group'),)
 
@@ -142,6 +148,7 @@ class AuthUserUserPermissions(models.Model):
     permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
 
     class Meta:
+        managed = False
         db_table = 'auth_user_user_permissions'
         unique_together = (('user', 'permission'),)
 
@@ -156,6 +163,7 @@ class DjangoAdminLog(models.Model):
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
 
     class Meta:
+        managed = False
         db_table = 'django_admin_log'
 
 
@@ -164,6 +172,7 @@ class DjangoContentType(models.Model):
     model = models.CharField(max_length=100)
 
     class Meta:
+        managed = False
         db_table = 'django_content_type'
         unique_together = (('app_label', 'model'),)
 
@@ -175,6 +184,7 @@ class DjangoMigrations(models.Model):
     applied = models.DateTimeField()
 
     class Meta:
+        managed = False
         db_table = 'django_migrations'
 
 
@@ -184,4 +194,5 @@ class DjangoSession(models.Model):
     expire_date = models.DateTimeField()
 
     class Meta:
+        managed = False
         db_table = 'django_session'

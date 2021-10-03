@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的机票</title>
+{#    <link rel="stylesheet" type="text/css" href="/static/css/bookflight.css">#}
+</head>
+<body>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+{#    <a href="../sims/add">添加学生</a>#}
+    <tr>
+        <th>IdNum</th>
+        <th>TicketID</th>
+        <th>UserID</th>
+        <th>FlightID</th>
+        <th>AirportID</th>
+        <th>Cost</th>
+    </tr>
+    {% for ticket in tickets %}
+        <tr>
+            <td align="center">{{ forloop.counter }} </td>
+            <td align="center">{{ ticket.ticketid }} </td>
+            <td align="center">{{ ticket.userid }} </td>
+            <td align="center">{{ ticket.flightid }} </td>
+            <td align="center">{{ ticket.airportid }} </td>
+            <td align="center">{{ ticket.money }} </td>
+            <td align="center">
+{#                <a href="../sims/edit/?id={{ flight.flightid }}">#}
+{#                    编辑#}
+{#                </a>#}
+                <a href="../delticket?ticketid={{ ticket.ticketid }}">
+                    退票
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+
+</table>
+{#<div class="input">#}
+{#    <label>购买张数：</label>#}
+{#    <input type="number" value="购买张数">#}
+{#    <input type="submit" value="提交">#}
+{#</div>#}
+
+</body>
+</html>

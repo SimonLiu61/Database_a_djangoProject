@@ -6,6 +6,8 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^add/$',views.testadd),
     url(r'^bookticket/$', views.bookTicket),
+    url(r'^myticket/$', views.myticket),
+    url(r'^delticket/$', views.delTicket),
     # url(r'^aircompany/$', views),
     # url(r'^airport/$', views),
     # url(r'^flight/$', views),
