@@ -22,6 +22,7 @@ class Aircompany(models.Model):
 
 class Airport(models.Model):
     airportid = models.AutoField(db_column='AirportID', primary_key=True)  # Field name made lowercase.
+    code = models.CharField(db_column='Code', max_length=255, blank=True, null=True)  # Field name made lowercase.
     airportname = models.CharField(db_column='AirportName', max_length=255, blank=True, null=True)  # Field name made lowercase.
     address = models.CharField(db_column='Address', max_length=255, blank=True, null=True)  # Field name made lowercase.
     phone = models.CharField(db_column='Phone', max_length=255, blank=True, null=True)  # Field name made lowercase.

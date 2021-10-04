@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'sims',
     'flight',
     'authorize',
+    'airport',
+    'aircompany'
 ]
 
 MIDDLEWARE = [

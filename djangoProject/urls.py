@@ -25,7 +25,8 @@ urlpatterns = [
     url(r'^sims/', include('sims.urls')),
     url(r'^flight/', include('flight.urls')),
     url(r'^authorize/', include('authorize.urls')),
-
+    url(r'^airport/', include('airport.urls')),
+    url(r'^aircompany/', include('aircompany.urls')),
     # url(r'^airport/', include('airport.urls')),
     # url(r'^aircompany/', include('aircompany.urls')),
 ]

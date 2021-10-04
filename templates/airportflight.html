@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全部航班展示</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bookflight.css">
+</head>
+<body>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+{#    <a href="../sims/add">添加学生</a>#}
+    <tr>
+        <th>IdNum</th>
+        <th>FlightID</th>
+        <th>PlaneID</th>
+        <th>起飞时间</th>
+        <th>抵达时间</th>
+        <th>起飞地点</th>
+        <th>抵达地点</th>
+        <th>是否延误</th>
+        <th>剩余票数</th>
+        <th>操作</th>
+    </tr>
+    {% for flight in airport_flights %}
+        <tr>
+            <td align="center">{{ forloop.counter }} </td>
+            <td align="center">{{ flight.flightid }} </td>
+            <td align="center">{{ flight.planeid }} </td>
+            <td align="center">{{ flight.utime }} </td>
+            <td align="center">{{ flight.dtime }} </td>
+            <td align="center">{{ flight.origin }} </td>
+            <td align="center">{{ flight.destination }} </td>
+            <td align="center">{{ flight.isdelay }} </td>
+            <td align="center">{{ flight.seatleft }} </td>
+            <td align="center">
+{#                <a href="../sims/edit/?id={{ flight.flightid }}">#}
+{#                    编辑#}
+{#                </a>#}
+                <a href="../flight/bookticket/?flightid={{ flight.flightid }}">
+                    航班延误提醒
+                </a>
+                <a href="../flight/bookticket/?flightid={{ flight.flightid }}">
+                    取消航班
+                </a>
+                <a href="../flight/bookticket/?flightid={{ flight.flightid }}">
+                    航班票务信息
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+
+</table>
+{#<div class="input">#}
+{#    <label>购买张数：</label>#}
+{#    <input type="number" value="购买张数">#}
+{#    <input type="submit" value="提交">#}
+{#</div>#}
+
+</body>
+</html>
