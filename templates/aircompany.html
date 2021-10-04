@@ -10,24 +10,24 @@
 {#    <a href="../sims/add">添加学生</a>#}
     <tr>
         <th>IdNum</th>
-        <th>AirportCode</th>
+        <th>CompanyCode</th>
         <th>名称</th>
         <th>地址</th>
         <th>电话</th>
         <th>操作</th>
     </tr>
-    {% for airport in airports %}
+    {% for aircompany in aircompanies %}
         <tr>
             <td align="center">{{ forloop.counter }} </td>
-            <td align="center">{{ airport.code }} </td>
-            <td align="center">{{ airport.airportname }} </td>
-            <td align="center">{{ airport.address }} </td>
-            <td align="center">{{ airport.phone }} </td>
+            <td align="center">{{ aircompany.code }} </td>
+            <td align="center">{{ aircompany.companyname }} </td>
+            <td align="center">{{ aircompany.address }} </td>
+            <td align="center">{{ aircompany.phone }} </td>
             <td align="center">
 {#                <a href="../sims/edit/?id={{ flight.flightid }}">#}
-{#                    编辑#}
+{#                    编辑#}ac
 {#                </a>#}
-                <a href="../airport/airportmanage?airportcode={{ airport.code }}">
+                <a href="../aircompany/manage?accode={{ aircompany.code }}">
                     进入管理
                 </a>
             </td>
@@ -35,5 +35,11 @@
     {% endfor %}
 
 </table>
+{#<div class="input">#}
+{#    <label>购买张数：</label>#}
+{#    <input type="number" value="购买张数">#}
+{#    <input type="submit" value="提交">#}
+{#</div>#}
+
 </body>
 </html>

@@ -10,6 +10,7 @@ from django.db import models
 
 class Aircompany(models.Model):
     companyid = models.IntegerField(db_column='CompanyID', primary_key=True)  # Field name made lowercase.
+    code = models.CharField(db_column='Code', max_length=255, blank=True, null=True)  # Field name made lowercase.
     companyname = models.CharField(db_column='CompanyName', max_length=255, blank=True, null=True)  # Field name made lowercase.
     phone = models.CharField(db_column='Phone', max_length=255, blank=True, null=True)  # Field name made lowercase.
     address = models.CharField(db_column='Address', max_length=255, blank=True, null=True)  # Field name made lowercase.
