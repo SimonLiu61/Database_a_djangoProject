@@ -35,25 +35,22 @@
 {#                <a href="../sims/edit/?id={{ flight.flightid }}">#}
 {#                    编辑#}
 {#                </a>#}
-                <a href="../flight/bookticket/?flightid={{ flight.flightid }}">
+                <a href="/airport/markdelay?flightid={{ flight.flightid }}">
                     航班延误提醒
                 </a>
-                <a href="../flight/bookticket/?flightid={{ flight.flightid }}">
+                <a href="/airport/canceldelay?flightid={{ flight.flightid }}">
+                    取消延误提醒
+                </a>
+                <a href="/airport/cancelflight?flightid={{ flight.flightid }}">
                     取消航班
                 </a>
-                <a href="../flight/bookticket/?flightid={{ flight.flightid }}">
-                    航班票务信息
+                <a href="/airport/ticketmanage?flightid={{ flight.flightid }}">
+                    航班票务信息管理
                 </a>
             </td>
         </tr>
     {% endfor %}
 
 </table>
-{#<div class="input">#}
-{#    <label>购买张数：</label>#}
-{#    <input type="number" value="购买张数">#}
-{#    <input type="submit" value="提交">#}
-{#</div>#}
-
 </body>
 </html>
