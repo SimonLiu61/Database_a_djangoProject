@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>全部航班展示</title>
+    <title>航班展示</title>
     <link rel="stylesheet" type="text/css" href="/static/css/bookflight.css">
 </head>
 <body>
 <table border="1px" width="100%" style="border-collapse: collapse;">
-{#    <a href="../sims/add">添加学生</a>#}
+    <a href="../sims/add">增加航线</a>
+    <a href="../sims">飞机资料管理</a>
     <tr>
         <th>IdNum</th>
         <th>FlightID</th>
@@ -35,15 +36,8 @@
 {#                <a href="../sims/edit/?id={{ flight.flightid }}">#}
 {#                    编辑#}
 {#                </a>#}
-                <a href="../flight/bookticket/?flightid={{ flight.flightid }}">
-                    航班延误提醒
-                </a>
-
-                <a href="../flight/bookticket/?flightid={{ flight.flightid }}">
-                    取消航班
-                </a>
-                <a href="../flight/bookticket/?flightid={{ flight.flightid }}">
-                    航班票务信息
+                <a href="../aircompany/ticketmanage?flightid={{ flight.flightid }}">
+                    航班状态修改
                 </a>
             </td>
         </tr>

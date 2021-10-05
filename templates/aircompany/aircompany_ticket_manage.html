@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>航司端-航班票务信息管理</title>
+    <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>航班号：{{ flight.flightid }}</h2>
+</div>
+<form method="post" action="/aircompany/ticketmanage/">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th align="right">航班编号:</th>
+            <td><input name="flightid" value="{{ flight.flightid }}"></td>
+        </tr>
+        <tr>
+            <th align="right">航班名称：</th>
+            <td><input name="flight_name" value="{{ flight.flightname }}"></td>
+        </tr>
+        <tr>
+            <th align="right">始发时间：</th>
+            <td><input name="flight_utime" value="{{ flight.utime }}"></td>
+        </tr>
+        <tr>
+            <th align="right">抵达时间：</th>
+            <td><input name="flight_dtime" value="{{ flight.dtime }}"></td>
+        </tr>
+        <tr>
+            <th align="right">始发：</th>
+            <td><input name="flight_origin" value="{{ flight.origin }}"></td>
+        </tr>
+        <tr>
+            <th align="right">到达：</th>
+            <td><input name="flight_destination" value="{{ flight.destination }}"></td>
+        </tr>
+        <tr>
+            <th align="right">当前剩余票数信息：</th>
+            <td><input name="flight_seatleft" value="{{ flight.seatleft }}"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+{#        {% ifequal isVip True %}#}
+{#            <li>VIP discount:10%</li>#}
+{#        {% endifequal %}#}
+    </table>
+</form>
+</body>
+</html>
