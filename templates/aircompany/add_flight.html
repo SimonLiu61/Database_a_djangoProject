@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>航司端-添加新航线信息</title>
+    <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>添加新航线信息</h2>
+</div>
+<form method="post" action="/aircompany/addflight/">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th align="right">航班编号:</th>
+            <td><input name="flightid" value={{ accode }}></td>
+        </tr>
+        <tr>
+            <th align="right">飞机编号:</th>
+            <td><input name="planeid" ></td>
+        </tr>
+        <tr>
+            <th align="right">航班名称：</th>
+            <td><input name="flight_name" ></td>
+        </tr>
+        <tr>
+            <th align="right">始发时间：</th>
+            <td><input name="flight_utime" ></td>
+        </tr>
+        <tr>
+            <th align="right">抵达时间：</th>
+            <td><input name="flight_dtime" ></td>
+        </tr>
+        <tr>
+            <th align="right">始发：</th>
+            <td><input name="flight_origin" ></td>
+        </tr>
+        <tr>
+            <th align="right">到达：</th>
+            <td><input name="flight_destination" ></td>
+        </tr>
+        <tr>
+            <th align="right">额定票数：</th>
+            <td><input name="flight_seatleft" ></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+{#        {% ifequal isVip True %}#}
+{#            <li>VIP discount:10%</li>#}
+{#        {% endifequal %}#}
+    </table>
+</form>
+</body>
+</html>

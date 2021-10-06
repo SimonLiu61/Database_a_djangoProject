@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>航司端-机型管理</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bookflight.css">
+</head>
+<body>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+{#    <a href="../sims/add">添加学生</a>#}
+    <tr>
+        <th>IdNum</th>
+        <th>PlaneID</th>
+        <th>CompanyID</th>
+        <th>型号</th>
+        <th>名称</th>
+        <th>额定人数</th>
+        <th>操作</th>plane
+    </tr>
+    {% for plane in company_planes %}
+        <tr>
+            <td align="center">{{ forloop.counter }} </td>
+            <td align="center">{{ plane.planeid }} </td>
+            <td align="center">{{ plane.companyid }} </td>
+            <td align="center">{{ plane.planemodel }} </td>
+            <td align="center">{{ plane.name }} </td>
+            <td align="center">{{ plane.npeople }} </td>
+            <td align="center">
+{#                <a href="../sims/edit/?id={{ flight.flightid }}">#}
+{#                    编辑#}
+{#                </a>#}
+                <a href="/airport/markdelay?flightid={{ flight.flightid }}">
+                    飞机管理
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>

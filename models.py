@@ -37,8 +37,8 @@ class Flight(models.Model):
     flightid = models.CharField(db_column='FlightID', primary_key=True, max_length=30)  # Field name made lowercase.
     planeid = models.IntegerField(db_column='PlaneID', blank=True, null=True)  # Field name made lowercase.
     flightname = models.CharField(db_column='FlightName', max_length=255, blank=True, null=True)  # Field name made lowercase.
-    utime = models.DateTimeField(db_column='UTime', blank=True, null=True)  # Field name made lowercase.
-    dtime = models.DateTimeField(db_column='DTime', blank=True, null=True)  # Field name made lowercase.
+    utime = models.CharField(db_column='UTime', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    dtime = models.CharField(db_column='DTime', max_length=255, blank=True, null=True)  # Field name made lowercase.
     origin = models.CharField(db_column='Origin', max_length=255, blank=True, null=True)  # Field name made lowercase.
     destination = models.CharField(db_column='Destination', max_length=255, blank=True, null=True)  # Field name made lowercase.
     isdelay = models.CharField(db_column='IsDelay', max_length=255, blank=True, null=True)  # Field name made lowercase.
@@ -51,7 +51,7 @@ class Flight(models.Model):
 
 class Plane(models.Model):
     planeid = models.AutoField(db_column='PlaneID', primary_key=True)  # Field name made lowercase.
-    companyid = models.IntegerField(db_column='CompanyID', blank=True, null=True)  # Field name made lowercase.
+    companyid = models.CharField(db_column='CompanyID', max_length=255, blank=True, null=True)  # Field name made lowercase.
     planemodel = models.CharField(db_column='PlaneModel', max_length=255, blank=True, null=True)  # Field name made lowercase.
     name = models.CharField(db_column='Name', max_length=255, blank=True, null=True)  # Field name made lowercase.
     npeople = models.IntegerField(db_column='NPeople', blank=True, null=True)  # Field name made lowercase.
