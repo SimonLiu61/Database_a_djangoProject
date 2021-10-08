@@ -8,6 +8,8 @@ urlpatterns = [
     url(r'^ticketmanage', views.ticketmanage),
     url(r'^addflight', views.addflight),
     url(r'^planemanage', views.planeManage),
+    url(r'^planeedit', views.planesEdit),
+    url(r'^addplane', views.addPlane),
 
     # url(r'^myticket/$', views),
 ]

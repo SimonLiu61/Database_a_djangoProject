@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/bookflight.css">
 </head>
 <body>
+<a href="/aircompany/addplane/">添加飞机</a>
 <table border="1px" width="100%" style="border-collapse: collapse;">
 {#    <a href="../sims/add">添加学生</a>#}
     <tr>
@@ -29,7 +30,7 @@
 {#                <a href="../sims/edit/?id={{ flight.flightid }}">#}
 {#                    编辑#}
 {#                </a>#}
-                <a href="/airport/markdelay?flightid={{ flight.flightid }}">
+                <a href="/aircompany/planeedit?planeid={{ plane.planeid }}">
                     飞机管理
                 </a>
             </td>

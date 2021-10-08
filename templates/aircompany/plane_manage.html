@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>航司端-飞机机型管理</title>
+    <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>飞机id：{{ plane.planeid }}</h2>
+</div>
+<form method="post" action="/aircompany/planeedit">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th align="right">飞机编号:</th>
+            <td><input name="planeid" value="{{ plane.planeid }}"></td>
+        </tr>
+        <tr>
+            <th align="right">所属航空公司：</th>
+            <td><input name="companyid" value="{{ plane.companyid }}"></td>
+        </tr>
+        <tr>
+            <th align="right">机型：</th>
+            <td><input name="planemodel" value="{{ plane.planemodel }}"></td>
+        </tr>
+        <tr>
+            <th align="right">名称：</th>
+            <td><input name="name" value="{{ plane.name }}"></td>
+        </tr>
+        <tr>
+            <th align="right">额定载人数量：</th>
+            <td><input name="npeople" value="{{ plane.npeople }}"></td>
+        </tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+{#        {% ifequal isVip True %}#}
+{#            <li>VIP discount:10%</li>#}
+{#        {% endifequal %}#}
+    </table>
+</form>
+</body>
+</html>
