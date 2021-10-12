@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <title>机场管理界面</title>
     <link rel="stylesheet" type="text/css" href="/static/css/bookflight.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">机场信息管理</a>
+    </div>
+    </div>
 <table border="1px" width="100%" style="border-collapse: collapse;">
 {#    <a href="../sims/add">添加学生</a>#}
     <tr>
-        <th>IdNum</th>
-        <th>AirportCode</th>
-        <th>名称</th>
-        <th>地址</th>
-        <th>电话</th>
-        <th>操作</th>
+        <th align="center">IdNum</th>
+        <th align="center">AirportCode</th>
+        <th align="center">名称</th>
+        <th align="center">地址</th>
+        <th align="center">电话</th>
+        <th align="center">操作</th>
     </tr>
     {% for airport in airports %}
         <tr>
