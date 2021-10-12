@@ -21,13 +21,7 @@
 <!-- 用户服务菜单 -->
 <div class="servicePortfolio">
     <div class="navbar navbar-default">
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand">云首页</a>
-        </div>
         <ul class="nav navbar-nav">
-            <li><a href="#">说明</a></li>
-            <li><a href="#">联系我们</a></li>
-            <li><a href="#">     </a></li>
             {% ifequal islogin True %}
                 <li><a>已登录，用户名：{{username}}</a></li>
                 {% ifequal isVip True %}
@@ -67,13 +61,6 @@
     <div class="workPlace col-sm-9">
         <form action="" class="">
             <div id="selectCloud" hidden="hidden" class="form-group form-inline">
-                <label class="control-label">选择云</label>
-                <select class="form-control">
-                    <option value="1">教育云</option>
-                    <option value="1">企业云</option>
-                    <option value="1">医疗云</option>
-                </select>
-                <button class="btn btn-primary form-control">进入云</button>
             </div>
 
             <div id="regist"  hidden="hidden" class="form-inline">
