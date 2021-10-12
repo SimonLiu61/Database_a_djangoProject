@@ -146,8 +146,9 @@
     </div>
 -->
 
-    <div data-1v class="form">
-        <h1 data-1v><a data-1v>登陆</a></h1>
+    <div data-1v class="form" align="center">
+        <h1 data-1v><a data-1v>注册新用户</a></h1>
+        <h4 data-1v><a data-1v>新用户均为普通用户</a></h4>
 {#        <div data-1v class="el-input">#}
 {#            <input name="username" type="text" autocomplete="off" placeholder="用户名" class="el-input__inner">#}
 {#        </div>#}
@@ -161,18 +162,12 @@
 {#            <span>登录</span>#}
 {#        </button>#}
         <div class="buttons" align="center">
-            <form action="/authorize/login_site" method="get">
+            <form action="/authorize/register" method="post">
+                {% csrf_token %}
                 <p><input type="text" name="username" placeholder="用户名" class="el-input__inner"></p>
                 <p><input type="password" name="password" placeholder="密码" class="el-input__inner"></p>
-                <input class="el-button" type="submit" value="登录">
-            </form>
-
-            <form method="get" action="/admin">
-                <input class="el-button" type="submit" value="管理员登录">
-            </form>
-            <label> </label>
-            <form method="get" action="/authorize/register">
-                <input class="el-button" type="submit" value="注册">
+                <p><input type="text" name="email" placeholder="邮箱" class="el-input__inner"></p>
+                <input class="el-button" type="submit" value="确认注册">
             </form>
         </div>
 

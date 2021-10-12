@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import auth
 from authorize.models import AuthUser
+from django.contrib.auth.models import User
 from django.contrib import messages
 import tkinter.messagebox #弹窗库
 from tkinter import *
@@ -61,3 +62,15 @@ def logout_site(request):
     UserInfo.isVip = False
     logout(request)     # <==
     return HttpResponseRedirect('已退出登录')
+
+
+def register(request):
+    if request.method == 'GET':
+        return render(request,'register.html')
+    else:
+        username = request.POST.get("username", '')
+        password = request.POST.get("password", '')
+        email = request.POST.get("email", '')
+        user = User.objects.create_user(username, email, password)
+        user.save()
+        return render(request,'login.html')
