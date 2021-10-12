@@ -1,0 +1,10 @@
+appdata==1.2.0
+asgiref @ file:///tmp/build/80754af9/asgiref_1625643473416/work
+certifi==2021.5.30
+Django @ file:///tmp/build/80754af9/django_1625585912945/work
+loguru==0.4.1
+psycopg2 @ file:///opt/concourse/worker/volumes/live/d12e789f-5b6c-4947-7cc2-187f3a9c9696/volume/psycopg2_1612298599991/work
+PyMySQL==1.0.2
+pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
+sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+typing-extensions @ file:///Users/ktietz/demo/mc3/conda-bld/typing_extensions_1629887998905/work
